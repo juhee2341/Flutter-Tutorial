@@ -67,3 +67,9 @@ flutter doctor
 ## 8. 생성된 프로젝트 확인
 
   <img src="first_project.png" width="480">
+
+## 9. 플러터 실행해보기
+
+```bash
+flutter run -d chrome
+```
