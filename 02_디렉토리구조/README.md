@@ -1,0 +1,49 @@
+# Flutter 디렉토리 구조
+
+## 프로젝트 시작지점
+
+```bash
+flutter_directory_guide/lib
+```
+
+lib 폴더 안에 있는 `main.dart`의
+
+```dart
+void main() {
+  runApp(const MainApp());
+}
+```
+
+가 서비스의 시작지점이 됩니다.
+runApp에는 Flutter의 Widget이 들어가게 됩니다
+
+## 의존성 관리
+
+```bash
+flutter_directory_guide/pubspec.yaml
+```
+
+해당 파일에서
+
+- 프로젝트의 Flutter, Dart 버젼 관리
+- 사용하는 라이브러리 import
+- 에셋 관리 (폰트, 이미지, json, 등등)
+
+## 린트 및 컨벤션
+
+```
+flutter_directory_guide/analysis_options.yaml
+```
+
+[다트 공식 컨벤션](https://dart.dev/tools/linter-rules)
+
+다트에서 지원하는 컨벤션 정의 및 스타일 적용
+현재는 권장 사항으로 작성해놓은 상태.
+원래는 싹 비어있음
+
+## 플랫폼 별 관리지점
+
+```dart
+flutter_directory_guide/android // 안드로이드
+flutter_directory_guide/ios // IOS
+```
