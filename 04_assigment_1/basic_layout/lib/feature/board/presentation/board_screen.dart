@@ -16,13 +16,13 @@ class BoardScreen extends StatelessWidget {
             children: [
               Image.network(
                 imageUrl,
-                height: 360,
+                height: 260,
                 fit: BoxFit.cover,
               ),
               const SizedBox(height: 16),
               const _ItemRowWidget(
-                title: 'Board Title',
-                description: 'board item.',
+                title: 'Type',
+                description: 'Phone key',
               ),
               const _ItemRowWidget(
                 title: 'ID',
@@ -30,7 +30,11 @@ class BoardScreen extends StatelessWidget {
               ),
               const _ItemRowWidget(
                 title: 'Assigned',
-                description: 'N/A',
+                description: '-',
+              ),
+              const _ItemRowWidget(
+                title: 'Status',
+                description: 'Active',
               ),
             ],
           ),
@@ -45,7 +49,7 @@ class BoardScreen extends StatelessWidget {
                 backgroundColor: Colors.black,
               ),
               child: const Text(
-                'Perform Action',
+                'Delete',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
