@@ -12,31 +12,35 @@ class BoardScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            children: [
-              Image.network(
-                imageUrl,
-                height: 260,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(height: 16),
-              const _ItemRowWidget(
-                title: 'Type',
-                description: 'Phone key',
-              ),
-              const _ItemRowWidget(
-                title: 'ID',
-                description: 'N/A',
-              ),
-              const _ItemRowWidget(
-                title: 'Assigned',
-                description: '-',
-              ),
-              const _ItemRowWidget(
-                title: 'Status',
-                description: 'Active',
-              ),
-            ],
+          Expanded(
+            child: Column(
+              children: [
+                Image.network(
+                  imageUrl,
+                  height: 360,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 16),
+                const Expanded(
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                    physics: AlwaysScrollableScrollPhysics(),
+                    child: Column(
+                      children: [
+                        _ItemRowWidget(
+                          title: 'Board Title',
+                          description: 'board item.',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                // ListView(
+                //   children: [],
+                // ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 48),
@@ -49,7 +53,7 @@ class BoardScreen extends StatelessWidget {
                 backgroundColor: Colors.black,
               ),
               child: const Text(
-                'Delete',
+                'Perform Action',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
