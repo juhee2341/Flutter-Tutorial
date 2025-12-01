@@ -16,19 +16,25 @@ Future<RecipeEntity?> showRecipeInputDialog(BuildContext context) async {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
+              TextFormField(
                 controller: titleCtrl,
                 decoration: const InputDecoration(labelText: "제목"),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
               ),
-              TextField(
+              TextFormField(
                 controller: descCtrl,
                 decoration: const InputDecoration(labelText: "설명"),
               ),
-              TextField(
+              TextFormField(
                 controller: imgCtrl,
                 decoration: const InputDecoration(labelText: "이미지 URL (옵션)"),
               ),
-              TextField(
+              TextFormField(
                 controller: ingredientsCtrl,
                 decoration: const InputDecoration(
                   labelText: "재료 (쉼표로 구분)",

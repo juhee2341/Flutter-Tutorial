@@ -32,6 +32,7 @@ class _FoodRecipeScreenState extends State<FoodRecipeScreen> {
   ///
 
   void addRecipe({required RecipeEntity newRecipe}) {
+    // widget.viewModel.addRecipe(newRecipe: newRecipe);
     setState(() {
       widget.viewModel.addRecipe(newRecipe: newRecipe);
     });
@@ -67,7 +68,7 @@ class _FoodRecipeScreenState extends State<FoodRecipeScreen> {
                   FoodRecipeAddButtonWidget(
                     onPressed: () async {
                       final newRecipe = await showRecipeInputDialog(context);
-
+                      print(newRecipe);
                       if (newRecipe != null) {
                         addRecipe(newRecipe: newRecipe);
                       }
