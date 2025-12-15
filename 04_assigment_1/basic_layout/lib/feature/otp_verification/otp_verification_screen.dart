@@ -19,11 +19,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     });
   }
 
-  void _handlePress() {
+  void _handlePress(String text) {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        content: Text('$inputText 등록 완료'),
+        content: Text('$text 등록 완료'),
       ),
     );
   }
@@ -60,7 +60,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               ),
               Text(inputText),
               OtpTextfieldWidget(onChanged: _onInputChanged),
-              OtpTextbuttonWidget(onPressed: _handlePress),
+              OtpTextbuttonWidget(onPressed: () => _handlePress(inputText)),
             ],
           ),
         ),
