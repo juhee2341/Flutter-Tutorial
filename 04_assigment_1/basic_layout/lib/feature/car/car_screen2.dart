@@ -77,6 +77,7 @@ class _CarScreen2State extends State<CarScreen2> {
       body: FutureBuilder(
         future: _carFuture,
         builder: (context, snapshot) {
+          // snapshot 은 상태와 같음 (로딩, 에러, 데이터) 상태 일 때 UI 처리
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {

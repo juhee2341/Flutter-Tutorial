@@ -2,6 +2,8 @@ import 'package:basic_layout/feature/car/car_screen2.dart';
 import 'package:basic_layout/feature/car/view_model/car_view_model.dart';
 import 'package:basic_layout/feature/food_recipe/presentation/food_recipe_screen.dart';
 import 'package:basic_layout/feature/food_recipe/presentation/view_model/food_recipe_view_model.dart';
+import 'package:basic_layout/feature/job/job_screen.dart';
+import 'package:basic_layout/feature/job/job_view_model.dart';
 import 'package:basic_layout/feature/otp_verification/otp_verification_screen.dart';
 import 'package:basic_layout/feature/text_input/text_input_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +20,8 @@ class MainApp extends StatelessWidget {
     final carViewModel = CarViewModel();
 
     return MaterialApp(
-      home: CarScreen2(
-        viewModel: carViewModel,
+      home: JobScreen(
+        viewModel: JobViewModel(),
       ),
     );
   }
