@@ -20,8 +20,8 @@ class MainApp extends StatelessWidget {
     final carViewModel = CarViewModel();
 
     return MaterialApp(
-      home: JobScreen(
-        viewModel: JobViewModel(),
+      home: CarScreen2(
+        viewModel: carViewModel,
       ),
     );
   }
